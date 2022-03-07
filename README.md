@@ -14,6 +14,7 @@ To test the install:
 gcc --version
 Should see version number
 
+
 termtest.c
 -----------
 This program is run from the command line of the terminal that you want to test.
@@ -22,6 +23,9 @@ When you press enter the packet gets processed by the terminal.
 
 To build:
 gcc -o termtest termtest.c
+
+To run:
+./termtest
 
 
 termtestsgr.c
@@ -35,5 +39,28 @@ will look like.
 
 To build:
 gcc -o termtestsgr termtestsgr.c
+
+To run:
+./termtestsgr
+
+
+fbinfo.c
+----------
+This program queries the display's frame buffer and displays the attributes to the console.
+
+To build:
+gcc fbinfo.c -o fbinfo
+
+To run:
+sudo ./fbinfo [path to frame buffer]
+sudo ./fbinfo /dev/fp0
+
+Note: to avoid the sudo thing...you can add yourself to the video group.
+
+sudo adduser dell video
+
+adds the user dell to video group
+The frame buffers belon to the video group
+You only need to do this once.
 
 
